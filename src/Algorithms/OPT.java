@@ -9,13 +9,14 @@ public class OPT implements Algorithm {
         LinkedList<Integer> frames = new LinkedList<>();
         int pageFaults = 0;
 
-        for (int i = 0; i < pageReferences.length; i++)
+        for (int i = 0; i < pageReferences.length; i++) {
             if (!frames.contains(pageReferences[i])) {
 
-                if (frames.size() < numberOfFrames)
+                if (frames.size() < numberOfFrames) {
                     frames.add(pageReferences[i]);
+                }
 
-                 else {
+                else {
 
                     int index = -1;
                     int farthest = 0;
@@ -27,17 +28,18 @@ public class OPT implements Algorithm {
                         boolean flag = true;
 
                         for (int k = i; k < pageReferences.length; k++) {
-                            if (pageReferences[k] == frame)
+                            if (pageReferences[k] == frame) {
                                 flag = false;
-                            if (pageReferences[k] == frame && farthestIndex > k)
+                            }
+                            if (pageReferences[k] == frame && farthestIndex > k) {
                                 farthestIndex = k;
+                            }
                         }
 
                         if (flag) {
                             index = j;
                             break;
-                        }
-                        else if (farthestIndex > farthest) {
+                        } else if (farthestIndex > farthest) {
                             farthest = farthestIndex;
                             index = j;
                         }
@@ -48,6 +50,7 @@ public class OPT implements Algorithm {
 
                 pageFaults++;
             }
+        }
 
         return pageFaults;
     }

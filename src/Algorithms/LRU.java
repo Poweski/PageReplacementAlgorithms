@@ -11,13 +11,16 @@ public class LRU implements Algorithm {
         for (int page : pageReferences) {
             if (!frames.contains(page)) {
 
-                if (frames.size() == numberOfFrames)
-                    frames.remove(0);
+                if (frames.size() == numberOfFrames) {
+                    frames.removeFirst();
+                }
 
                 pageFaults++;
                 frames.add(page);
             }
-            else frames.add(frames.remove(frames.indexOf(page)));
+            else {
+                frames.add(frames.remove(frames.indexOf(page)));
+            }
         }
 
         return pageFaults;

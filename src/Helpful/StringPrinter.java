@@ -6,8 +6,9 @@ public class StringPrinter {
         int counter = 0;
         while (counter < REFERENCE_STRING_LENGTH) {
             System.out.print(referenceString[counter++] + " ");
-            if (counter % STRING_CONSTANT == 0)
+            if (counter % STRING_CONSTANT == 0) {
                 System.out.println();
+            }
         }
     }
 }

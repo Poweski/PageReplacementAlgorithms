@@ -9,15 +9,17 @@ public class FIFO implements Algorithm {
         LinkedList<Integer> frames = new LinkedList<>();
         int pageFaults = 0;
 
-        for (int page : pageReferences)
+        for (int page : pageReferences) {
             if (!frames.contains(page)) {
 
-                if (frames.size() == numberOfFrames)
+                if (frames.size() == numberOfFrames) {
                     frames.removeFirst();
+                }
 
                 pageFaults++;
                 frames.add(page);
             }
+        }
 
         return pageFaults;
     }

@@ -3,7 +3,6 @@ package Helpful;
 import Algorithms.Algorithm;
 
 public class AverageCalculator {
-
     private final int NUMBER_OF_PAGES;
     private final int NUMBER_OF_FRAMES;
     private final int REFERENCE_STRING_LENGTH;

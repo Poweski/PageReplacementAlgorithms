@@ -11,15 +11,16 @@ public class RAND implements Algorithm {
         Random generator = new Random();
         int pageFaults = 0;
 
-        for (int page : pageReferences)
+        for (int page : pageReferences) {
             if (!frames.contains(page)) {
 
-                if (frames.size() == numberOfFrames)
+                if (frames.size() == numberOfFrames) {
                     frames.remove(generator.nextInt(numberOfFrames));
-
+                }
                 pageFaults++;
                 frames.add(page);
             }
+        }
 
         return pageFaults;
     }

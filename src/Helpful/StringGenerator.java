@@ -11,8 +11,9 @@ public class StringGenerator {
 
         for (int i = 0; i < REFERENCE_STRING_LENGTH/STRING_CONSTANT; i++) {
             int tmp = generator.nextInt(NUMBER_OF_PAGES);
-            for (int j = 0; j < STRING_CONSTANT; j++)
-                string[counter++] = Math.min(NUMBER_OF_PAGES, tmp + (int)generator.nextExponential());
+            for (int j = 0; j < STRING_CONSTANT; j++) {
+                string[counter++] = Math.min(NUMBER_OF_PAGES, tmp + (int) generator.nextExponential());
+            }
         }
 
         return string;
